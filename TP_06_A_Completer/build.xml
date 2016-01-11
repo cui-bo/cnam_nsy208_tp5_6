@@ -1,0 +1,23 @@
+<project name="aspectj" default="notebook" basedir=".">
+	
+	<property name="EXECUTE-CLASS_PATH" 	value=".;C:\nsy208\tools\aspectj1.5\lib\aspectjrt.jar;C:/nsy208/tp_pattern_02/00_Brazil+Facade/bin/;C:/nsy208/tp_pattern_02/TP-01_A_Completer/bin/;C:/nsy208/tp_pattern_02/TP-02_A_Completer/bin/"/>
+	
+	<target name="notebook">
+		<java classname="sunlabs.brazil.server.Main" 
+						classpath="${EXECUTE-CLASS_PATH}" 
+						fork="true"
+					>
+						<arg line="	-c config/notebook.config"/>
+		</java>
+	</target>
+	
+	<target name="nokia-N93">
+			<java classname="sunlabs.brazil.server.Main" 
+							classpath="${EXECUTE-CLASS_PATH}" 
+							fork="true"
+						>
+						<arg line="	-c config/nokia-N93.config"/>
+			</java>
+		</target>
+
+</project>
