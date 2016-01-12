@@ -19,7 +19,7 @@ public interface  Visitor
 	public  String  visiteLeaf(Visitable l) throws Exception;
 	
 	// A completer methode pour la visite d'une chose composite
-	// TODO 09
-	
+	// TODO 09	=> fait
+	public String visiteComposite(Visitable c) throws Exception;
 	
 }

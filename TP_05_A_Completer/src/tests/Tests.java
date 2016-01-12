@@ -45,7 +45,7 @@ public class Tests extends TestCase {
 				!COMPOSITE_02_enfants.containsKey("SIMPLE_01"),true	
 		);
 	}
-	/*
+	
 	public void testFactory()
 	{	
 		ThingFactory compositeThingFactory = new CompositeThingFactory() ;
@@ -93,7 +93,7 @@ public class Tests extends TestCase {
 		(COMPOSITE_02.getThingId().equals("COMPOSITE_03"), true) ;
 		
 	}
-	
+	/*
 	public void testVisiteur()
 	{	
 		ThingFactory compositeThingFactory = new CompositeThingFactory() ;
@@ -125,6 +125,5 @@ public class Tests extends TestCase {
 		
 	
 	}
-	
 	*/
 }

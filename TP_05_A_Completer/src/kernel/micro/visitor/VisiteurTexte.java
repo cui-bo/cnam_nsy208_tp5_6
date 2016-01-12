@@ -12,7 +12,7 @@ public class VisiteurTexte implements Visitor {
 	}
 
 	public String visiteComposite(Visitable c) throws Exception {
-		
+		System.out.println("visiteComposite");
 		StringBuffer valRet = new StringBuffer("") ;
 		
 		valRet.append("<thing id='" + ((Thing)c).getThingId() + "' facade='"+ ((Thing)c).getFacade() + ">");

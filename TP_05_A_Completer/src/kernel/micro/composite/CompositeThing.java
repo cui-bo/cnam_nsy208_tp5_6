@@ -9,12 +9,12 @@ import kernel.micro.facade.LocalThing;
  * @author djamel bellebia
  *
  */
-public class CompositeThing 
+public class CompositeThing extends LocalThing
 {
 	// A completer le consutructeur
 	//TODO 06	=> fait
 	
-	private Hashtable enfants;
+	private Hashtable enfants = new Hashtable();
 	
 	public CompositeThing() {
 		super();
