@@ -13,6 +13,7 @@ import util.Logger;
  */
 public aspect LocalThingFactoryAspectImpl  
 {	
+	
 
 	//declare precedence: kernel.micro.composite.CompositeAspect;
 	// Simple factory
@@ -37,10 +38,30 @@ public aspect LocalThingFactoryAspectImpl
 		return _thing;
 	}
 	
+	
 	// Composite factory
 	// A completer La factory pour la creation d'une chose compsite
 	//TODO 07
-	
+	declare parents : CompositeThingFactory implements ThingFactory;
+	private static Thing CompositeThingFactory._compositeThing = null;
+	public synchronized Thing CompositeThingFactory.createThing(String id)
+	{
+		try
+		{				
+			_compositeThing = new CompositeThing() ;
+			
+			_compositeThing.setThingId(id);
+		
+			_compositeThing.setFacade("CompositeThing");
+			
+			
+		}
+		catch(Exception ex)
+		{
+			Logger.out.println("Ex at  ThingFactoryImpl.createLocalThing()" + ex.toString()) ;
+		}
+		return _compositeThing;
+	}
 	
 	
 }
