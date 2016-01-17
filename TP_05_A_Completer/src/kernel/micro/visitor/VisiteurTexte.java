@@ -12,7 +12,6 @@ public class VisiteurTexte implements Visitor {
 	}
 
 	public String visiteComposite(Visitable c) throws Exception {
-		System.out.println("visiteComposite");
 		StringBuffer valRet = new StringBuffer("") ;
 		
 		valRet.append("<thing id='" + ((Thing)c).getThingId() + "' facade='"+ ((Thing)c).getFacade() + ">");
@@ -35,7 +34,6 @@ public class VisiteurTexte implements Visitor {
 	}
 
 	public String visiteLeaf(Visitable l) throws Exception {
-		System.out.println("visiteLeaf");
 		StringBuffer valRet = new StringBuffer("") ;
 		
 		Thing thing= ((Thing)l);

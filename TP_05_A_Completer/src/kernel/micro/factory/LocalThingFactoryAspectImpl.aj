@@ -40,7 +40,7 @@ public aspect LocalThingFactoryAspectImpl
 	
 	// Composite factory
 	// A completer La factory pour la creation d'une chose compsite
-	//TODO 07
+	//TODO 07	=> fait
 	declare parents : CompositeThingFactory implements ThingFactory;
 	private static Thing CompositeThingFactory._compositeThing = null;
 	public synchronized Thing CompositeThingFactory.createThing(String id)

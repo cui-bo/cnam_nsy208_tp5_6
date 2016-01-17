@@ -1,7 +1,5 @@
 package kernel.micro.visitor;
-import kernel.micro.composite.CompositeThing;
-import kernel.micro.composite.SimpleThing;
-import kernel.micro.facade.Thing;
+import org.aspectj.lang.annotation.DeclareAnnotation;
 public aspect AJThingVtor
 {
 	declare parents: Thing implements  Visitable;
@@ -12,8 +10,18 @@ public aspect AJThingVtor
 	}
 	
 	// A completer viste d'une chose simple
-	//TODO 10
+	//TODO 10	=> fait
+	declare parents: kernel.micro.composite.SimpleThing implements Visitable;
+	
+	public String kernel.micro.composite.SimpleThing.accept(Visitor st) throws Exception {
+		return st.visiteLeaf(this);
+	}
 	
 	// A completer viste d'une chose composite
-	// TODO 11
+	// TODO 11	=> fait
+	declare parents: kernel.micro.composite.CompositeThing implements Visitable;
+	
+	public String kernel.micro.composite.CompositeThing.accept(Visitor ct) throws Exception {
+		return ct.visiteComposite(this);
+	}
 }
