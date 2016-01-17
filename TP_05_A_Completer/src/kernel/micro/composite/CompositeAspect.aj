@@ -32,14 +32,14 @@ public abstract aspect CompositeAspect {
 	 * Instanciation de la table qui contiendra les reférences vers les sytsèmes
 	 * composant
 	 */
-	// TODO 02
+	// TODO 02	=> fait
 	private Hashtable Composite._children = new Hashtable();
 
 	/**
 	 * Renvoie la table de reférence vers les composants donnant la possibilite
 	 * de parcourir la structure
 	 */
-	// TODO 03
+	// TODO 03	=> fait
 	public Hashtable Composite.getChildren() {
 		return this._children;
 	}
@@ -47,11 +47,21 @@ public abstract aspect CompositeAspect {
 	/**
 	 * Ajout d'un système en tant que composant identifiable via un clé unique
 	 */
-	// TODO 04
+	// TODO 04	=> fait
+	public void Composite.addChild(String key, String value) {
+		this._children.put(key, value);
+	}
+	
 
 	/**
 	 * Retrait d'un système au moyen de sa de la table des références.
 	 */
-	// TODO 05
+	// TODO 05	=> fait
+	public void Composite.removeChild(String key) {
+		if (this._children.containsKey(key)) {
+			this._children.remove(key);
+			
+		}
+	}
 
 }

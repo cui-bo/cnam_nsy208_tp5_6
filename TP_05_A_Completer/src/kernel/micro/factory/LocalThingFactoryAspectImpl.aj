@@ -13,7 +13,6 @@ import util.Logger;
  */
 public aspect LocalThingFactoryAspectImpl  
 {	
-	
 
 	//declare precedence: kernel.micro.composite.CompositeAspect;
 	// Simple factory

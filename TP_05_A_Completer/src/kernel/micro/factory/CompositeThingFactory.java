@@ -1,6 +1,5 @@
 package kernel.micro.factory;
 
-import java.util.Hashtable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,8 +7,10 @@ import kernel.micro.composite.CompositeThing;
 import kernel.micro.composite.SimpleThing;
 import kernel.micro.facade.LocalThing;
 import kernel.micro.facade.Thing;
+import kernel.micro.visitor.Visitable;
+import kernel.micro.visitor.Visitor;
 
-public class CompositeThingFactory implements ThingFactory
+public class CompositeThingFactory implements ThingFactory, Visitable
 {
 	private static CompositeThing compositeThing = new CompositeThing();
 	private static SimpleThing simpleThing = new SimpleThing();
@@ -34,10 +35,12 @@ public class CompositeThingFactory implements ThingFactory
 	    if (compositeMatcher.find()) {
 			thing = getCompositeThing();
 			thing.setThingId(id);
+			thing.setFacade("CompositeThing");
 			System.out.println("[CompositeThingFactory] Create Composite Thing");
 		} else if (simpleMatcher.find()) {
 			thing = getSimpleThing();
 			thing.setThingId(id);
+			thing.setFacade("SimpleThing");
 			System.out.println("[CompositeThingFactory] Create Simple Thing");
 		}else {
 			System.out.println("NO MATCH");
@@ -52,6 +55,10 @@ public class CompositeThingFactory implements ThingFactory
 	
 	public static SimpleThing getSimpleThing() {
 		return simpleThing;
+	}
+
+	public String accept(Visitor v) throws Exception {
+		return "test";
 	}
 	
 }

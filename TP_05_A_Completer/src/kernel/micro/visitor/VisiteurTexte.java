@@ -35,6 +35,7 @@ public class VisiteurTexte implements Visitor {
 	}
 
 	public String visiteLeaf(Visitable l) throws Exception {
+		System.out.println("visiteLeaf");
 		StringBuffer valRet = new StringBuffer("") ;
 		
 		Thing thing= ((Thing)l);
